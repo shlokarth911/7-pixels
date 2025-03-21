@@ -82,7 +82,7 @@ function Layout({ children }) {
 // Main App component
 const App = () => {
   return (
-    <Router>
+    <Router basename="/7-pixels">
       <Routes>
         <Route
           path="/"

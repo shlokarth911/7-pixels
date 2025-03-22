@@ -31,6 +31,12 @@ const MainContainer = styled.div`
     color: #000;
     transition: transform 0.3s ease-out; /* Smooth transition for icon */
   }
+
+  @media (max-width: 768px) {
+    .cursor {
+      display: none;
+    }
+  }
 `;
 
 const Home = () => {

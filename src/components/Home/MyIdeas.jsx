@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Image1 from "../../assets/Images/Ideas/SnapFit.png";
 import Image2 from "../../assets/Images/Ideas/IncredibleIndia.png";
 import Image3 from "../../assets/Images/Ideas/NationalGeographic.png";
+import { Link } from "react-router-dom";
 
 const IdeasContainer = styled.div`
   padding: 0 5%;
@@ -58,6 +59,18 @@ const IdeasContainer = styled.div`
     cursor: pointer;
     color: #000;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 3%;
+
+    h1 {
+      font-size: 2vw;
+    }
+
+    span {
+      font-size: 4.5vw;
+    }
+  }
 `;
 
 const IdeaBoxGrid = styled.div`
@@ -104,7 +117,9 @@ const MyIdeas = () => {
         ))}
       </IdeaBoxGrid>
 
-      <button>See More</button>
+      <Link to="/works">
+        <button>See More</button>
+      </Link>
     </IdeasContainer>
   );
 };

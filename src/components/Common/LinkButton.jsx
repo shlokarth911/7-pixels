@@ -35,6 +35,12 @@ const LinkButtonContainer = styled.div`
   .linker {
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    .linker {
+      font-size: 2vw;
+    }
+  }
 `;
 
 const LinkButton = (props) => {

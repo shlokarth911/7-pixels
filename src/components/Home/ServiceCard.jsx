@@ -25,6 +25,30 @@ const ServiceCardContainer = styled.div`
     width: 90%;
     line-height: 120%;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    h5 {
+      font-size: 5vh;
+      margin-top: 10vh;
+      width: 90%;
+    }
+
+    h3 {
+      font-size: 5vh;
+      margin-top: 8vw;
+      padding-left: 5vw;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 2.8vh;
+      line-height: 130%;
+      padding-left: 5vw;
+      margin-top: 5vh;
+    }
+  }
 `;
 
 const ServiceCard = ({ index, title, description }) => {

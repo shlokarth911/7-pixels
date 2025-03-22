@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const AboutUsContainer = styled.div`
   margin-top: 100px;
-  padding: 30px 50px;
+  padding: 3vw 5vw;
 
   h1 {
     font-size: 3vw;
@@ -25,6 +25,7 @@ const AboutUsContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 1.8vw;
+    border: none;
   }
 
   button a {
@@ -63,6 +64,45 @@ const AboutUsContainer = styled.div`
   #reach-out-link {
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 5.5vw;
+      font-weight: 500;
+    }
+
+    p {
+      width: 90%;
+      font-size: 3.09vw;
+    }
+
+    button {
+      margin-top: 6.5vw;
+      padding: 1vw 1vw;
+      border-radius: 5000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1vw;
+      border: none;
+      padding-left: 2vw;
+
+      a {
+        font-size: 2.5vw;
+      }
+
+      .icon-container {
+        height: 4.5vw;
+        width: 4.5vw;
+
+        i {
+          font-size: 2.5vw;
+          font-weight: 100;
+          opacity: 1;
+        }
+      }
+    }
+  }
 `;
 
 const AboutUs = () => {
@@ -72,7 +112,7 @@ const AboutUs = () => {
 
       <p>
         Merging design and code to craft dynamic, functional websites.
-        Problem-solving through intuitive interfaces, responsive builds. Let’s
+        Problem-solving through intuitive interfaces, responsive builds. Let's
         transform your vision into digital impact. 🚀
       </p>
 

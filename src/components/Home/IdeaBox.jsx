@@ -95,6 +95,35 @@ const IdeaBoxContainer = styled.div`
       top: 0;
     }
   }
+
+  @media (max-width: 768px) {
+    height: 40vw;
+
+    .part1 {
+      height: 35vw;
+
+      #image-container {
+        height: 90%;
+      }
+    }
+
+    .part2 {
+      gap: 3%;
+
+      h1 {
+        font-size: 5vw;
+      }
+
+      p {
+        font-size: 2vw;
+      }
+
+      #check {
+        font-size: 2vw;
+        padding: 1%.7 3vw;
+      }
+    }
+  }
 `;
 
 const IdeaBox = ({ title, description, image }) => {

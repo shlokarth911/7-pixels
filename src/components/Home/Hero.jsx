@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 const HeroContainer = styled.div`
   position: relative;
@@ -66,6 +67,16 @@ const UpperCol = styled.div`
       font-weight: 200;
       color: #fff;
     }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 10vw;
+      }
+
+      h4 {
+        font-size: 2.5vw;
+      }
+    }
   }
 `;
 const LowerCol = styled.div`
@@ -103,6 +114,14 @@ const LowerCol = styled.div`
       line-height: 1;
       font-size: 6vw;
     }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 7vw;
+      }
+
+      align-items: center;
+    }
   }
   .box2 {
     width: 50%;
@@ -132,38 +151,47 @@ const LowerCol = styled.div`
       background-color: #fff;
       z-index: 9;
     }
+
+    @media (max-width: 768px) {
+      button {
+        font-size: 2.5vw;
+        left: 50%;
+      }
+    }
   }
 `;
 
-const Hero = () => {
+const Hero = ({ onMouseEnter, onMouseLeave }) => {
   useGSAP(() => {
-    // gsap.from("#upper .box2", {
-    //   x: "50vw",
-    //   ease: "power4.out",
-    //   duration: 1.75,
-    // });
-    // gsap.from("#lower .box1", {
-    //   x: "-50vw",
-    //   ease: "power4.out",
-    //   duration: 1.75,
-    // });
-    // const tl = gsap.timeline();
-    // tl.from("#year", {
-    //   y: 30,
-    //   opacity: 0,
-    //   duration: 0.5,
-    // });
-    // tl.from("#contact::after", {
-    //   width: "00%",
-    //   duration: 0.5,
-    // });
-    // tl.from("#contact span", {
-    //   y: "180%",
-    //   opacity: 1,
-    //   ease: "power4.out",
-    //   duration: 1,
-    //   delay: 0.5,
-    // });
+    const tl = gsap.timeline();
+    gsap.from("#upper .box2", {
+      y: "-50vw",
+      ease: "power4.out",
+      duration: 1.75,
+      opacity: 0,
+    });
+    gsap.from("#lower .box1", {
+      y: "50vw",
+      ease: "power4.out",
+      duration: 1.75,
+      opacity: 0,
+    });
+    tl.from("#year", {
+      y: 30,
+      opacity: 0,
+      duration: 0.5,
+    });
+    tl.from("#contact::after", {
+      width: "00%",
+      duration: 0.5,
+    });
+    tl.from("#contact span", {
+      y: "180%",
+      opacity: 1,
+      ease: "power4.out",
+      duration: 1,
+      delay: 0.5,
+    });
   });
   return (
     <HeroContainer>
@@ -189,15 +217,21 @@ const Hero = () => {
               display: "inline-block",
             }}
           >
-            <span
-              style={{
-                cursor: "pointer",
-                overflow: "hidden",
-                display: "inline-block",
-              }}
+            <Link
+              to={"/contact"}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
             >
-              KNOW MORE
-            </span>
+              <span
+                style={{
+                  cursor: "pointer",
+                  overflow: "hidden",
+                  display: "inline-block",
+                }}
+              >
+                REACH OUT
+              </span>
+            </Link>
           </button>
         </div>
       </LowerCol>

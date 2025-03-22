@@ -22,6 +22,10 @@ const CardContainer = styled.div`
   justify-content: center;
   gap: 3vw;
   margin-top: 3vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Services = () => {
@@ -48,11 +52,10 @@ const Services = () => {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // Animate all elements with the .service-card class with a stagger effect.
       gsap.from(".service-card", {
         y: 100,
         opacity: 0,
-        stagger: 0.1, // Adjust the stagger delay as needed.
+        stagger: 0.1,
         scrollTrigger: {
           trigger: containerRef.current,
           scrub: true,

@@ -34,6 +34,7 @@ const LinkButtonContainer = styled.div`
 
   .linker {
     text-decoration: none;
+    mix-blend-mode: difference;
   }
 
   @media (max-width: 768px) {

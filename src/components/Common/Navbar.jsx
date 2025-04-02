@@ -35,6 +35,7 @@ const LinkContainer = styled.div`
   li {
     text-decoration: none;
     list-style-type: none;
+    mix-blend-mode: difference;
   }
 
   ul {

@@ -23,6 +23,7 @@ const Container = styled.div`
       font-weight: 300;
       font-size: 1.5vw;
       color: #868686;
+      margin-right: 1vw;
     }
   }
 
@@ -47,7 +48,7 @@ const Container = styled.div`
   }
 `;
 
-const WorkBox = () => {
+const WorkBox = ({ title, link, index }) => {
   const layerRef = useRef();
   const animation = useRef();
 
@@ -68,11 +69,20 @@ const WorkBox = () => {
     animation.current.reverse();
   };
 
+  const handleOnClick = () => {
+    window.open(link, "_blank");
+  };
+
   return (
-    <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <Container
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleOnClick}
+    >
       <div className="layer" ref={layerRef} />
       <h1>
-        <span>1</span> Work
+        <span>{index}</span>
+        {title}
       </h1>
       <i className="ri-arrow-right-up-line"></i>
     </Container>
